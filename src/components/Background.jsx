@@ -7,7 +7,7 @@ const Background = ({ children }) => {
     <div className="background">
       {/* Dots Layer */}
       <div className="dots">
-        {Array.from({ length: 50 }).map((_, index) => (
+        {Array.from({ length: 200 }).map((_, index) => (
           <div
             key={index}
             className="dot"

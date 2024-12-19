@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Rubiik", sans-serif;
+  font-family: "League Spartan", sans-serif;
 }
 
 html,
@@ -107,7 +107,7 @@ body {
   right: 0;
 }
 
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 760px) {
   .mobile-nav {
     display: none;
   }
@@ -125,7 +125,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1240px) {
   .mobile-nav {
     display: none;
   }
