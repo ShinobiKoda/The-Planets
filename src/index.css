@@ -94,7 +94,6 @@ body {
   top: 0;
   padding-top: 4rem;
   right: -300px;
-  width: 150px;
   height: 100%;
   background-color: white;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
@@ -105,6 +104,7 @@ body {
 
 .sidebar.show {
   right: 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 760px) {
@@ -123,6 +123,10 @@ body {
   .section-tabs {
     display: none;
   }
+
+  .sidebar {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1240px) {
@@ -139,6 +143,10 @@ body {
   }
 
   .section-tabs {
+    display: none;
+  }
+
+  .sidebar {
     display: none;
   }
 }
