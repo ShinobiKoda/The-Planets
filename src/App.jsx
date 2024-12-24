@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.css";
 import Background from "./components/Background";
 import Navbar from "./components/Navbar";
@@ -6,13 +6,17 @@ import PlanetCard from "./components/PlanetCard";
 import { planets } from "./data/Planets";
 
 const App = () => {
+  // State to track the selected planet
+  const [selectedPlanet, setSelectedPlanet] = useState(planets[0]); // Default to the first planet
+
   return (
     <div className="app-container">
       <Background>
-        <Navbar />
-        {planets.map((planet) => (
-          <PlanetCard key={planet.name} planet={planet} />
-        ))}
+        {/* Pass planets and selection handler to Navbar */}
+        <Navbar planets={planets} onSelectPlanet={setSelectedPlanet} />
+
+        {/* Display the selected planet */}
+        <PlanetCard planet={selectedPlanet} />
       </Background>
     </div>
   );

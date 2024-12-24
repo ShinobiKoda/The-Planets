@@ -12,7 +12,13 @@ const PlanetCard = ({ planet }) => {
           <h4>{planet.name.toUpperCase()}</h4>
           <p>{planet.overview.description}</p>
           <p>
-            Source: <a href="https://en.wikipedia.org/wiki/Wiki">Wikipedia</a>
+            Source:
+            <a
+              href={`https://en.wikipedia.org/wiki/${planet.name}`}
+              target="_blank"
+            >
+              Wikipedia
+            </a>
           </p>
         </div>
       </div>
@@ -34,6 +40,7 @@ const PlanetCard = ({ planet }) => {
           <span>{planet.averageTemp}</span>
         </div>
       </div>
+      {/* https://en.wikipedia.org/wiki/Earth */}
     </div>
   );
 };
