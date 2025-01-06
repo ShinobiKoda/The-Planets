@@ -5,7 +5,7 @@ const PlanetCard = ({ planet }) => {
   return (
     <div className="w-full text-white mt-[6rem]">
       <div className="flex flex-col items-center justify-center gap-6 w-full">
-        <div className="w-full mx-auto flex items-center justify-center">
+        <div className="w-[20rem] mx-auto flex items-center justify-center">
           <img src={planet.overview.image} alt="" />
         </div>
         <div className="text-center w-full flex flex-col items-center justify-center gap-5 max-w-[600px] px-4">

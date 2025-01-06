@@ -2,9 +2,14 @@ import React, { useState } from "react";
 
 const Navbar = ({ planets, onSelectPlanet }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedTab, setSelectedTab] = useState(null);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+  };
+
+  const switchTabs = (buttonIndex) => {
+    setSelectedTab(buttonIndex);
   };
 
   return (
@@ -21,6 +26,23 @@ const Navbar = ({ planets, onSelectPlanet }) => {
             <div className="line line2"></div>
             <div className="line line3"></div>
           </div>
+        </div>
+      </div>
+      <div className="text-[#393955] px-4">
+        <div className="flex items-center justify-between border-[#383852] border-b-2 tab-section">
+          {["OVERVIEW", "STRUCTURE", "SURFACE"].map((tab, index) => (
+            <button
+              key={index}
+              onClick={() => switchTabs(index)}
+              className={`px-4 py-4 border-b-2 ${
+                selectedTab === index
+                  ? "border-[#6f2ed4] text-white"
+                  : "border-transparent text-gray-500"
+              }`}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
       </div>
       <div className={`sidebar ${isOpen ? "show" : ""} text-black`}>

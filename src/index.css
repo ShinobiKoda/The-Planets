@@ -127,6 +127,10 @@ body {
   .sidebar {
     display: none;
   }
+
+  .tab-section {
+    display: none;
+  }
 }
 
 @media screen and (min-width: 1240px) {
@@ -147,6 +151,10 @@ body {
   }
 
   .sidebar {
+    display: none;
+  }
+
+  .tab-section {
     display: none;
   }
 }
