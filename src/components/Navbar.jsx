@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Navbar = ({ planets, onSelectPlanet }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTab, setSelectedTab] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(0);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -36,8 +36,8 @@ const Navbar = ({ planets, onSelectPlanet }) => {
               onClick={() => switchTabs(index)}
               className={`px-4 py-4 border-b-2 ${
                 selectedTab === index
-                  ? "border-[#6f2ed4] text-white"
-                  : "border-transparent text-gray-500"
+                  ? "border-[#6f2ed4] text-white font-bold"
+                  : "border-transparent text-gray-500 font-bold"
               }`}
             >
               {tab}
