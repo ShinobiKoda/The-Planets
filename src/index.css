@@ -66,7 +66,7 @@ body {
 }
 
 .hamburger.open .line {
-  background-color: black;
+  background-color: white;
 }
 
 .hamburger.open .line1 {
@@ -93,13 +93,13 @@ body {
   position: fixed;
   top: 0;
   padding-top: 4rem;
-  right: -300px;
+  right: -500px;
   height: 100%;
-  background-color: white;
+  background-color: #070625;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
   z-index: 10;
-  color: black;
+  color: white;
 }
 
 .sidebar.show {

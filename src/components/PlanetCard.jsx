@@ -12,7 +12,7 @@ const PlanetCard = ({ planet }) => {
             {planet.name.toUpperCase()}
           </h4>
           <p className="leading-8">{planet.overview.description}</p>
-          <p className=" flex items-center gap-1">
+          <p className=" flex items-center gap-1 text-xl font-normal">
             Source:
             <a
               href={`https://en.wikipedia.org/wiki/${planet.name}`}
@@ -25,21 +25,27 @@ const PlanetCard = ({ planet }) => {
         </div>
       </div>
       <div className="w-full flex flex-col gap-3 px-4">
-        <div className="flex justify-between items-center w-full  border-2 border-[#383852] p-4">
-          <span className="text-[#606175]">ROTATION TIME</span>
-          <span>{planet.rotationTime}</span>
+        <div className="flex justify-between items-center w-full border-2 border-[#383852] p-4">
+          <span className="text-[#606175] text-xl font-semibold">
+            ROTATION TIME
+          </span>
+          <span className="text-xl font-semibold">{planet.rotationTime}</span>
         </div>
         <div className="flex justify-between items-center w-full  border-2 border-[#383852] p-4">
-          <span className="text-[#606175]">REVOLUTION TIME</span>
-          <span>{planet.revolutionTime}</span>
+          <span className="text-[#606175] text-xl font-semibold">
+            REVOLUTION TIME
+          </span>
+          <span className="text-xl font-semibold">{planet.revolutionTime}</span>
         </div>
         <div className="flex justify-between items-center w-full  border-2 border-[#383852] p-4">
-          <span className="text-[#606175]">RADIUS</span>
-          <span>{planet.radius}</span>
+          <span className="text-[#606175] text-xl font-semibold">RADIUS</span>
+          <span className="text-xl font-semibold">{planet.radius}</span>
         </div>
         <div className="flex justify-between items-center w-full  border-2 border-[#383852] p-4">
-          <span className="text-[#606175]">AVERAGE TEMP.</span>
-          <span>{planet.averageTemp}</span>
+          <span className="text-[#606175] text-xl font-semibold">
+            AVERAGE TEMP.
+          </span>
+          <span className="text-xl font-semibold">{planet.averageTemp}</span>
         </div>
       </div>
       {/* https://en.wikipedia.org/wiki/Earth */}

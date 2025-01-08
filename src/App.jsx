@@ -7,7 +7,7 @@ import { planets } from "./data/Planets";
 
 const App = () => {
   // State to track the selected planet
-  const [selectedPlanet, setSelectedPlanet] = useState(planets[0]); // Default to the first planet
+  const [selectedPlanet, setSelectedPlanet] = useState(planets[2]); // Default to the third planet
 
   return (
     <div className="app-container">
