@@ -6,17 +6,28 @@ import PlanetCard from "./components/PlanetCard";
 import { planets } from "./data/Planets";
 
 const App = () => {
-  // State to track the selected planet
-  const [selectedPlanet, setSelectedPlanet] = useState(planets[2]); // Default to the third planet
+  const [selectedPlanet, setSelectedPlanet] = useState(planets[2]); // Earth is the third planet in the array
+  const [selectedTab, setSelectedTab] = useState(0);
+
+  const handleSelectPlanet = (planet) => {
+    setSelectedPlanet(planet);
+    setSelectedTab(0); // Reset to overview tab when a new planet is selected
+  };
+
+  const handleSwitchTabs = (tabIndex) => {
+    setSelectedTab(tabIndex);
+  };
 
   return (
     <div className="app-container">
       <Background>
-        {/* Pass planets and selection handler to Navbar */}
-        <Navbar planets={planets} onSelectPlanet={setSelectedPlanet} />
-
-        {/* Display the selected planet */}
-        <PlanetCard planet={selectedPlanet} />
+        <Navbar
+          planets={planets}
+          onSelectPlanet={handleSelectPlanet}
+          selectedTab={selectedTab}
+          switchTabs={handleSwitchTabs}
+        />
+        <PlanetCard planet={selectedPlanet} selectedTab={selectedTab} />
       </Background>
     </div>
   );

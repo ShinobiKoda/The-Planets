@@ -2,26 +2,46 @@ import React, { useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 // Reusable component for planet list items
-const PlanetListItem = ({ planet, onSelectPlanet }) => (
-  <div className="text-white border-b-[1px] pb-4 flex justify-between items-center">
+const PlanetListItem = ({ planet, onSelectPlanet, color }) => (
+  <div
+    className="text-white border-b-[1px] pb-4 flex justify-between items-center cursor-pointer"
+    onClick={() => onSelectPlanet(planet)}
+  >
     <p className="flex gap-4">
-      <span className="w-4 h-4 rounded-full bg-[#419ebb]"></span>
+      <span
+        className="w-4 h-4 rounded-full"
+        style={{ backgroundColor: color }}
+      ></span>
       <span>{planet.name}</span>
     </p>
     <FaArrowRight />
   </div>
 );
 
-const Navbar = ({ planets, onSelectPlanet }) => {
+const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedTab, setSelectedTab] = useState(0);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  const switchTabs = (buttonIndex) => {
-    setSelectedTab(buttonIndex);
+  const planetColors = {
+    Mercury: "#419ebb",
+    Venus: "#eda249",
+    Earth: "#6d2ed5",
+    Mars: "#d14c32",
+    Jupiter: "#d83a34",
+    Saturn: "#cd5120",
+    Uranus: "#1ec1a2",
+    Neptune: "#2d68f0",
+  };
+
+  const handlePlanetClick = (planet) => {
+    onSelectPlanet(planet);
+    setIsOpen(false); // Close the sidebar
+    setTimeout(() => {
+      document.getElementById("planet-info");
+    }, 0);
   };
 
   return (
@@ -66,7 +86,8 @@ const Navbar = ({ planets, onSelectPlanet }) => {
           <PlanetListItem
             key={planet.name}
             planet={planet}
-            onSelectPlanet={onSelectPlanet}
+            onSelectPlanet={handlePlanetClick}
+            color={planetColors[planet.name]}
           />
         ))}
       </div>
@@ -78,11 +99,26 @@ const Navbar = ({ planets, onSelectPlanet }) => {
           {planets.map((planet) => (
             <a
               key={planet.name}
-              onClick={() => onSelectPlanet(planet)}
+              onClick={() => handlePlanetClick(planet)}
               className="hover:opacity-90 cursor-pointer"
             >
               {planet.name.toUpperCase()}
             </a>
+          ))}
+        </div>
+        <div className="flex justify-center gap-4 mt-4">
+          {["OVERVIEW", "STRUCTURE", "SURFACE"].map((tab, index) => (
+            <button
+              key={index}
+              onClick={() => switchTabs(index)}
+              className={`px-4 py-2 ${
+                selectedTab === index
+                  ? "bg-[#6f2ed4] text-white font-bold"
+                  : "bg-transparent text-gray-500 font-bold"
+              }`}
+            >
+              {tab}
+            </button>
           ))}
         </div>
       </div>
@@ -94,11 +130,26 @@ const Navbar = ({ planets, onSelectPlanet }) => {
           {planets.map((planet) => (
             <a
               key={planet.name}
-              onClick={() => onSelectPlanet(planet)}
+              onClick={() => handlePlanetClick(planet)}
               className="hover:opacity-90 cursor-pointer"
             >
               {planet.name.toUpperCase()}
             </a>
+          ))}
+        </div>
+        <div className="flex gap-4">
+          {["OVERVIEW", "STRUCTURE", "SURFACE"].map((tab, index) => (
+            <button
+              key={index}
+              onClick={() => switchTabs(index)}
+              className={`px-4 py-2 ${
+                selectedTab === index
+                  ? "bg-[#6f2ed4] text-white font-bold"
+                  : "bg-transparent text-gray-500 font-bold"
+              }`}
+            >
+              {tab}
+            </button>
           ))}
         </div>
       </div>

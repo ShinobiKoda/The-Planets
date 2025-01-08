@@ -1,17 +1,32 @@
 import React from "react";
 
-const PlanetCard = ({ planet }) => {
+const PlanetCard = ({ planet, selectedTab }) => {
+  const getTabContent = () => {
+    switch (selectedTab) {
+      case 0:
+        return planet.overview;
+      case 1:
+        return planet.internalStructure;
+      case 2:
+        return planet.surfaceGeology;
+      default:
+        return planet.overview;
+    }
+  };
+
+  const tabContent = getTabContent();
+
   return (
-    <div className="w-full text-white mt-[6rem]">
+    <div id="planet-info" className="w-full text-white mt-[6rem]">
       <div className="flex flex-col items-center justify-center gap-6 w-full mb-12">
         <div className="w-[20rem] mx-auto flex items-center justify-center">
-          <img src={planet.overview.image} alt="" />
+          <img src={tabContent.image} alt="" />
         </div>
         <div className="text-center w-full flex flex-col items-center justify-center gap-5 max-w-[600px] px-4">
           <h4 className="font-semibold text-3xl">
             {planet.name.toUpperCase()}
           </h4>
-          <p className="leading-8">{planet.overview.description}</p>
+          <p className="leading-8">{tabContent.description}</p>
           <p className=" flex items-center gap-1 text-xl font-normal">
             Source:
             <a
@@ -48,7 +63,6 @@ const PlanetCard = ({ planet }) => {
           <span className="text-xl font-semibold">{planet.averageTemp}</span>
         </div>
       </div>
-      {/* https://en.wikipedia.org/wiki/Earth */}
     </div>
   );
 };

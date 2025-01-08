@@ -1,6 +1,6 @@
 export const planets = [
   {
-    name: "Mecury",
+    name: "Mercury",
     rotationTime: "59 days",
     revolutionTime: "88 days",
     radius: "2,439.7km",
@@ -13,12 +13,12 @@ export const planets = [
     internalStructure: {
       description:
         "Mercury appears to have a solid silicate crust and mantle overlying a solid, metallic outer core layer, a deeper liquid core layer, and a solid inner core.[28][29] The composition of the iron-rich core remains uncertain, but it likely contains nickel, silicon and perhaps sulfur and carbon, plus trace amounts of other elements.[30] The planet's density is the second highest in the Solar System at 5.427 g/cm3, only slightly less than Earth's density of 5.515 g/cm3.",
-      image: "/planet-mecury-internal.svg",
+      image: "/planet-mercury-internal.svg",
     },
     surfaceGeology: {
       description:
         "Mercury's surface is similar in appearance to that of the Moon, showing extensive mare-like plains and heavy cratering, indicating that it has been geologically inactive for billions of years. It is more heterogeneous than the surface of Mars or the Moon, both of which contain significant stretches of similar geology, such as maria and plateaus.",
-      image: "/geology-mecury.png",
+      image: "/geology-mercury.png",
     },
   },
   {
@@ -157,7 +157,7 @@ export const planets = [
     name: "Neptune",
     rotationTime: "16h 6m",
     revolutionTime: "60,190 days",
-    radius: "6,371km",
+    radius: "24,622km",
     averageTemp: "16°C",
     overview: {
       description:
@@ -172,7 +172,7 @@ export const planets = [
     surfaceGeology: {
       description:
         "Neptune does not have a solid surface. Its atmosphere (made up mostly of hydrogen, helium, and methane) extends to great depths, gradually merging into water and other melted ices over a heavier, solid core with about the same mass as Earth.",
-      image: "/geology-neptune.svg",
+      image: "/geology-neptune.png",
     },
   },
 ];
