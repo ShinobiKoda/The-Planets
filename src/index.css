@@ -159,7 +159,7 @@ body {
     justify-content: space-between;
   }
 
-  .planet-tabs div{
+  .planet-tabs {
     flex: 1;
   }
 

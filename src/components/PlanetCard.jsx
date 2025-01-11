@@ -32,15 +32,15 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
   return (
     <div id="planet-info" className="w-full text-white mt-[6rem]">
       <div className="flex flex-col items-center justify-center gap-6 w-full mb-[2rem]planet-info">
-        <div className="w-[20rem] mx-auto flex items-center justify-center">
+        <div className="max-w-[20rem] mx-auto flex items-center justify-center max-h-[20rem]">
           <img src={tabContent.image} alt="" />
         </div>
-        <div className="planet-tabs w-full my-12 justify-between max-w-[1000px] px-4">
+        <div className="planet-tabs w-full my-12 justify-between max-w-[1000px] px-4 flex-1 h-[290px] overflow-hidden">
           <div className="text-center w-full flex flex-col gap-4 max-w-[600px] mobile-description">
             <h4 className="font-semibold text-[3rem] text-left">
               {planet.name.toUpperCase()}
             </h4>
-            <p className="leading-8 max-w-[500px] h-[150px] overflow-hidden">
+            <p className="leading-8 max-w-[500px] h-[150px] ">
               {tabContent.description}
             </p>
             <p className="flex items-center gap-1 text-xl font-normal">
@@ -54,9 +54,9 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
               </a>
             </p>
           </div>
-          <div className="flex flex-col max-w-[350px] planet-tabs-nav font-bold justify-between gap-12">
+          <div className="flex flex-col max-w-[350px] planet-tabs-nav font-bold justify-between gap-12 flex-1">
             <div
-              className={`flex justify-between items-center px-3 cursor-pointer hover:opacity-90 h-[.5rem] ${
+              className={`flex justify-between items-center p-4 cursor-pointer hover:opacity-90 ${
                 selectedTab === 0 ? "" : "bg-transparent border border-white"
               }`}
               style={selectedTab === 0 ? { backgroundColor: planetColor } : {}}
@@ -66,7 +66,7 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
               <span>OVERVIEW</span>
             </div>
             <div
-              className={`flex justify-between items-center px-3 cursor-pointer hover:opacity-90 h-[2.5rem] ${
+              className={`flex justify-between items-center p-4 cursor-pointer hover:opacity-90 ${
                 selectedTab === 1 ? "" : "bg-transparent border border-white"
               }`}
               style={selectedTab === 1 ? { backgroundColor: planetColor } : {}}
@@ -76,7 +76,7 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
               <span>INTERNAL STRUCTURE</span>
             </div>
             <div
-              className={`flex justify-between items-center px-3 cursor-pointer hover:opacity-90 h-[2.5rem] ${
+              className={`flex justify-between items-center p-4 cursor-pointer hover:opacity-90 ${
                 selectedTab === 2 ? "" : "bg-transparent border border-white"
               }`}
               style={selectedTab === 2 ? { backgroundColor: planetColor } : {}}
