@@ -80,7 +80,7 @@ const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
       <div
         className={`sidebar ${
           isOpen ? "show" : ""
-        } text-black flex flex-col px-6 gap-4 py-8 w-full`}
+        } text-black flex flex-col px-6 gap-4 py-12 w-full h-full`}
       >
         {planets.map((planet) => (
           <PlanetListItem
@@ -106,21 +106,6 @@ const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
             </a>
           ))}
         </div>
-        <div className="flex justify-center gap-4 mt-4">
-          {["OVERVIEW", "STRUCTURE", "SURFACE"].map((tab, index) => (
-            <button
-              key={index}
-              onClick={() => switchTabs(index)}
-              className={`px-4 py-2 ${
-                selectedTab === index
-                  ? "bg-[#6f2ed4] text-white font-bold"
-                  : "bg-transparent text-gray-500 font-bold"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
       </div>
 
       {/* Desktop Navigation */}
@@ -137,21 +122,7 @@ const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
             </a>
           ))}
         </div>
-        <div className="flex gap-4">
-          {["OVERVIEW", "STRUCTURE", "SURFACE"].map((tab, index) => (
-            <button
-              key={index}
-              onClick={() => switchTabs(index)}
-              className={`px-4 py-2 ${
-                selectedTab === index
-                  ? "bg-[#6f2ed4] text-white font-bold"
-                  : "bg-transparent text-gray-500 font-bold"
-              }`}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+        
       </div>
     </div>
   );

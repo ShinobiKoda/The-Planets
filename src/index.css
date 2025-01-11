@@ -32,6 +32,7 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1; /* Lowest layer */
+  background-color: #070625; /* Background color */
 }
 
 /* Content layer (including sidebar and navbar) */
@@ -51,7 +52,7 @@ body {
   height: 1.5rem;
   cursor: pointer;
   right: 0;
-  z-index: 20;
+  z-index: 40; /* Increased z-index to ensure it remains visible */
 }
 
 .hamburger:hover {
@@ -98,13 +99,30 @@ body {
   background-color: #070625;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
   transition: right 0.3s ease;
-  z-index: 10;
+  z-index: 30; /* Increased z-index to be on top of everything else */
   color: white;
 }
 
 .sidebar.show {
   right: 0;
   width: 100%;
+}
+
+/* Remove fixed navbar */
+.navbar-fixed {
+  position: relative;
+  top: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: #070625;
+}
+
+.planet-tabs-nav{
+  display: none;
+}
+
+.mobile-description{
+  align-items: center;
 }
 
 @media screen and (min-width: 760px) {
@@ -131,9 +149,31 @@ body {
   .tab-section {
     display: none;
   }
+
+  .planet-tabs-nav{
+    display: flex;
+  }
+
+  .planet-tabs{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .planet-tabs div{
+    flex: 1;
+  }
+
+  .planet-tabs :first-child{
+    text-align: left;
+  }
+
+  .mobile-description{
+    align-items: start;
+  }
+
 }
 
-@media screen and (min-width: 1240px) {
+@media screen and (min-width: 1440px) {
   .mobile-nav {
     display: none;
   }
@@ -156,5 +196,16 @@ body {
 
   .tab-section {
     display: none;
+  }
+
+  .planet-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .planet-tabs{
+    display: flex;
+    flex-direction: flex-column;
   }
 }
