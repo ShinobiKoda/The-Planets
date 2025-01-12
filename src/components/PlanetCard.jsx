@@ -31,16 +31,16 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
 
   return (
     <div id="planet-info" className="w-full text-white mt-[6rem]">
-      <div className="flex flex-col items-center justify-center gap-6 w-full mb-[2rem]planet-info">
-        <div className="max-w-[20rem] mx-auto flex items-center justify-center max-h-[20rem]">
+      <div className="planet-info">
+        <div className="max-w-[20rem] mx-auto flex max-h-[25rem]">
           <img src={tabContent.image} alt="" />
         </div>
-        <div className="planet-tabs w-full my-12 justify-between max-w-[1000px] px-4 flex-1 h-[290px] overflow-hidden">
+        <div className="planet-tabs w-full my-12 justify-between max-w-[1000px] px-4 flex-1 overflow-hidden">
           <div className="text-center w-full flex flex-col gap-4 max-w-[600px] mobile-description">
             <h4 className="font-semibold text-[3rem] text-left">
               {planet.name.toUpperCase()}
             </h4>
-            <p className="leading-8 max-w-[500px] h-[150px] ">
+            <p className="leading-8 max-w-[500px]">
               {tabContent.description}
             </p>
             <p className="flex items-center gap-1 text-xl font-normal">

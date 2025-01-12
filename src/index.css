@@ -125,6 +125,16 @@ body {
   align-items: center;
 }
 
+.planet-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
 @media screen and (min-width: 760px) {
   .mobile-nav {
     display: none;
@@ -157,9 +167,6 @@ body {
   .planet-tabs{
     display: flex;
     justify-content: space-between;
-  }
-
-  .planet-tabs {
     flex: 1;
   }
 
@@ -200,12 +207,15 @@ body {
 
   .planet-info{
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 
   .planet-tabs{
     display: flex;
-    flex-direction: flex-column;
+    flex-direction: column;
   }
 }
