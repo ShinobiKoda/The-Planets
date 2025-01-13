@@ -227,13 +227,15 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    max-width: 1000px;
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+    gap: 15rem;
   }
 
   .planet-image{
-    max-width: 35rem;
+    max-width: 25rem;
   }
 
  

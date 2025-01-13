@@ -36,13 +36,11 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
           <img src={tabContent.image} alt="" />
         </div>
         <div className="planet-tabs w-full my-12 max-w-[1000px] mx-auto">
-          <div className="text-center w-full flex flex-col gap-4 mobile-description max-w-[500px]">
+          <div className="text-center w-full flex flex-col gap-4 mobile-description">
             <h4 className="font-semibold text-[3rem] text-left">
               {planet.name.toUpperCase()}
             </h4>
-            <p className="leading-8 max-w-[500px]">
-              {tabContent.description}
-            </p>
+            <p className="leading-8 max-w-[500px]">{tabContent.description}</p>
             <p className="flex items-center gap-1 text-xl font-normal">
               Source:
               <a
@@ -54,7 +52,7 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
               </a>
             </p>
           </div>
-          <div className="flex flex-col max-w-[350px] planet-tabs-nav font-bold justify-between gap-12 flex-1">
+          <div className="flex flex-col max-w-[350px] planet-tabs-nav font-bold justify-between gap-12 flex-1 *:gap-4 *:whitespace-nowrap">
             <div
               className={`flex justify-between items-center p-4 cursor-pointer hover:opacity-90 ${
                 selectedTab === 0 ? "" : "bg-transparent border border-white"
