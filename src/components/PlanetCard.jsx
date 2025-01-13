@@ -32,7 +32,7 @@ const PlanetCard = ({ planet, selectedTab, switchTabs }) => {
   return (
     <div id="planet-info" className="w-full text-white mt-[6rem] px-4">
       <div className="flex flex-col items-center justify-center gap-6 w-full mb-[2rem] planets-info">
-        <div className="max-w-[20rem] mx-auto flex items-center justify-center max-h-[20rem] planet-image">
+        <div className="planet-image">
           <img src={tabContent.image} alt="" />
         </div>
         <div className="planet-tabs w-full my-12 max-w-[1000px] mx-auto">

@@ -135,6 +135,10 @@ body {
   margin-bottom: 2rem;
 }
 
+.planet-image{
+  max-width: 16rem;
+}
+
 @media screen and (min-width: 760px) {
   .mobile-nav {
     display: none;
@@ -177,6 +181,10 @@ body {
   .mobile-description {
     align-items: start;
     margin: 0;
+  }
+
+  .planet-image{
+    max-width: 20rem;
   }
 }
 
@@ -222,6 +230,10 @@ body {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
+  }
+
+  .planet-image{
+    max-width: 35rem;
   }
 
  
