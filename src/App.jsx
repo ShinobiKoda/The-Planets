@@ -46,13 +46,13 @@ const App = () => {
             selectedPlanet={selectedPlanet}
           />
         </div>
-        <div className={`content ${isBlurred ? "content-blur" : ""}`}>
+        
           <PlanetCard
             planet={selectedPlanet}
             selectedTab={selectedTab}
             switchTabs={handleSwitchTabs}
           />
-        </div>
+
       </Background>
     </div>
   );

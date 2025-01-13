@@ -19,9 +19,8 @@ body {
 /* Ensure the container spans the entire viewport */
 .app-container {
   position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  height: 100%;
 }
 
 /* Background layer */
@@ -117,15 +116,16 @@ body {
   background-color: #070625;
 }
 
-.planet-tabs-nav{
+.planet-tabs-nav {
   display: none;
 }
 
-.mobile-description{
+.mobile-description {
   align-items: center;
+  margin: 0 auto;
 }
 
-.planet-info{
+.planet-info {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -160,24 +160,24 @@ body {
     display: none;
   }
 
-  .planet-tabs-nav{
+  .planet-tabs-nav {
     display: flex;
   }
 
-  .planet-tabs{
+  .planet-tabs {
     display: flex;
     justify-content: space-between;
     flex: 1;
   }
 
-  .planet-tabs :first-child{
+  .planet-tabs :first-child {
     text-align: left;
   }
 
-  .mobile-description{
+  .mobile-description {
     align-items: start;
+    margin: 0;
   }
-
 }
 
 @media screen and (min-width: 1440px) {
@@ -205,17 +205,21 @@ body {
     display: none;
   }
 
-  .planet-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1440px;
-    margin: 0 auto;
+  .mobile-description{
+    margin: 0;
   }
 
-  .planet-tabs{
+  .planet-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .planet-tabs {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
   }
 }
