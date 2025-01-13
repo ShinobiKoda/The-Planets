@@ -43,6 +43,7 @@ const App = () => {
             onSelectPlanet={handleSelectPlanet}
             selectedTab={selectedTab}
             switchTabs={handleSwitchTabs}
+            selectedPlanet={selectedPlanet}
           />
         </div>
         <div className={`content ${isBlurred ? "content-blur" : ""}`}>

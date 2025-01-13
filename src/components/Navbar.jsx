@@ -18,7 +18,7 @@ const PlanetListItem = ({ planet, onSelectPlanet, color }) => (
   </div>
 );
 
-const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
+const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs, selectedPlanet }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -66,9 +66,9 @@ const Navbar = ({ planets, onSelectPlanet, selectedTab, switchTabs }) => {
             <button
               key={index}
               onClick={() => switchTabs(index)}
-              className={`px-4 py-4 border-b-[1px] ${
+              className={`px-4 py-4 border-b-[2px] ${
                 selectedTab === index
-                  ? "border-[#6f2ed4] text-white font-bold"
+                  ? `border-[${planetColors[selectedPlanet.name]}] text-white font-bold`
                   : "border-transparent text-gray-500 font-bold"
               }`}
             >
